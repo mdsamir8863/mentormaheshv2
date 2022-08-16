@@ -15,11 +15,24 @@ import Propelling from "./assets/propelling.png";
 import email from "./assets/email.png";
 import phone from "./assets/phone.png";
 import find_me_here from "./assets/find_me_here.png";
+import { useRef } from "react";
+import Scrollbtn from "./Scrollbtn";
+
 
 function App() {
+  const lifee = useRef(null);
+  const worke = useRef(null);
+  const musice = useRef(null);
+  // const scrollToSection = (ElementRef) => {
+  //   window.scrollTo({
+  //     top: ElementRef.current.offSetTop,
+  //     behavior: "smooth",
+  //   });
+  // };
+
   return (
     <div>
-      <div style={{ background: "#0d0828",padding: '1.5rem' }}>
+      <div className="main_circle" style={{ background: "#0d0828", padding: "1.5rem" }}>
         <div className="circle1">
           <div className="circle2">
             <div className="circle3">
@@ -29,42 +42,71 @@ function App() {
         </div>
       </div>
       <div className="LWM">
-        <img src={life} alt="" />
-        <img src={work} alt="" />
-        <img src={music} alt="" />
+        <a href="#lifee">
+          {" "}
+          <img className="lifee" src={life} alt="" />
+        </a>
+        <a href="#musice">
+          {" "}
+          <img className="music" src={music} alt="" />
+        </a>
+        <a href="#worke">
+          {" "}
+          <img className="work" src={work} alt="" />
+        </a>
+  
       </div>
       <div className="first_div">
-        <h3>
+        <h2>
           Check out my youtube
           <span>
-            <img src={youtube_logo} alt="" width="18rem" />
+            <img src={youtube_logo} alt="" width="15rem" />
           </span>
           Chanel
-        </h3>
+        </h2>
         <img src={youtube1} alt="" id="youtube" />
       </div>
-      
-      <div className="second_div">
+
+      <div id="lifee" ref={lifee} className="second_div">
         <div className="about_me_imges">
           <img src={life} alt="" className="text_img" />
-          <img src={footer} alt="" className="sir_img" />
+          <img src={footer} alt="" className="" />
         </div>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque
-          veritatis exercitationem cum rem iste iure quam optio perferendis
-          adipisci. Quasi iste officiis perferendis voluptate optio adipisci
-          quibusdam esse?
+          I have always been fascinated with people, the human psyche and
+          interpersonal dynamics & my early influences to music.. (Woodstock
+          logo, Love and peace symbol)
         </p>
-        <h3>FACTS ABOUT ME</h3>
-        <span>Hobbies</span>
+        <h2>FACTS ABOUT ME</h2>
+        {/* <span>Hobbies</span> */}
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore
-          necessitatibus ? Laborum, atque repudiandae delenitasperiores placeat,
-          ratione optio nisi in similique facilis vero? Non aut excepturi dolor
-          temporibus! Dignissimos cum provident autem!
+          I began my career in sales. Leveraging my expertise in scouting
+          talent, I then shifted to the dynamic industry of Recruiting. Having
+          met over 40,000 candidates and hired hundreds of them, I learnt the
+          recruitment industry in and out.
         </p>
       </div>
-      <div className="third_div">
+
+
+      <div id="musice" ref={musice}  className="fourth_div">
+        <div className="music_imges">
+          <img src={music} alt="" className="text_img" />
+          <img src={music1} alt="" className="sir_img" />
+        </div>
+        <div>
+          <p>
+            I've always been someone who derives my grit and inspiration from
+            music, especially Metal music and Rock music from the 70’s, 80s and
+            90s. With my ventures right now, I am trying to pass on the same to
+            everyone between the ages of 5 to 55 through stories and
+            illustrations.
+          </p>
+        </div>
+      </div>
+
+
+
+      <div id="worke" ref={worke} className="third_div">
         <div className="work_imges">
           <img src={workk} alt="" className="sir_img" />
           <img src={work} alt="" className="text_img" />
@@ -76,23 +118,9 @@ function App() {
           sapiente non deserunt laudantium, distinctio voluptatibus? Provident
           aut facere similique aliquam illum ab velit soluta tempora
         </p>
-      </div>
-      <div className="fourth_div">
-        <div className="music_imges">
-          <img src={music} alt="" className="text_img" />
-          <img src={music1} alt="" className="sir_img" />
-        </div>
-        <div>
-          <p>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem vel
-            minus ipsam magni. Soluta illum esse ratione magni voluptas
-            consequatur natus excepturi ex, nisi quos recusandae harum eaque
-            provident sunt molestiae aut fugiat suscipit in nesciunt quis. Quod
-            sapiente ullam temporibus nulla! Facere, voluptatibus.
-          </p>
-        </div>
-      </div>
-      <div className="fifth_div">
+      </div> 
+   
+      <div id="musice" ref={musice} className="fifth_div">
         <div className="logo1">
           <img src={Logo1} alt="" />
           <p>
@@ -148,7 +176,7 @@ function App() {
       </div>
       <div className="seventh_div">
         <div className="contact">
-          <h3>contact us on </h3>
+          <h3>contact us </h3>
           <div className="email">
             <img src={email} alt="" className="contact_img" />
             <b>email </b>
@@ -175,38 +203,3 @@ function App() {
 
 export default App;
 
-// MM Site - 2022
-// About me section:
-
-// I have always been fascinated with people, the human psyche and interpersonal dynamics & my early influences to music..
-// (Woodstock logo, Love and peace symbol)
-
-// Work Section ..No heading needed, just the flow..page 1 to 2
-
-// I began my career in sales. Leveraging my expertise in scouting talent, I then shifted to the dynamic industry of Recruiting. Having met over 40,000 candidates and hired hundreds of them, I learnt the recruitment industry in and out.
-
-// Shift to Work Page 2 ( CXO Tee Shirt)  Logo of CXO
-
-// Having had the privilege of pitching to top CEO’s, interviewing multiple “C - Level “ executives, I noticed a gap… A big gap. The paucity of time. (Think of an image,
-
-// Hiring for top management can be tricky. Those making the hiring decisions don't have ample time to go through an entire resume. Those applying, i.e. the ultra-accomplished corporate executives, do not know how to correctly leverage their experience and achievements.
-
-// I decided to bridge that gap through my Venture CXO branding. Here my team and I collectively help these interviewees ace these interviews by designing and writing concise and competency based Cover letters, resumes and Video introductions.( Personal Branding Image )
-// We also help them build a personal brand on LinkedIn as an additional asset that can help them get the best industry opportunities.( Image of Linkedin growth, flower to influencer image )
-
-// For the 20+ Youngsters, I conceptualised 'Propelling Stories', where we help individuals to revamp their personal / digital presence through websites and social media strategies. We harness the impeccable power of story-telling and illustrations to capture the ever declining attention spans and evoke powerful emotions.
-
-// Shift to page 3
-
-// However, I didn't stop here. Always wanting to maximise my impact through work, I began two new ventures (Mentoons, Toonland Logo )
-
-// After keenly observing modern technology and social media, I noticed the extent of their detrimental effects on our well-being. Seeing children and teenagers  addicted to technology disheartens me.
-
-// Thus I began Mentoons. Psychology and cartoon based platform that helps people lead healthy, tech-enabled and not tech dependent lives. We also mentor young professionals seeking career guidance.
-
-// ( IMAGE OF ALL 4 BRANDS , ME Standing illustration )
-
-// MUSIC PAGE
-// I've always been someone who derives my grit and inspiration from music, especially Metal music and Rock music from the 70’s, 80s and 90s. With my ventures right now, I am trying to pass on the same to everyone between the ages of 5 to 55 through stories and illustrations.
-
-// My love for story-telling, illustrations and social impact are my why underneath everything I do.
