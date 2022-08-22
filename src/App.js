@@ -16,8 +16,10 @@ import email from "./assets/email.png";
 import phone from "./assets/phone.png";
 import find_me_here from "./assets/find_me_here.png";
 import { useRef } from "react";
-import Scrollbtn from "./Scrollbtn";
-
+import { Button } from "react-bootstrap";
+import "bootstrap/dist/css/bootstrap.min.css";
+// import Scrollbtn from "./Scrollbtn";
+import Navbar from "./Navbar";
 
 function App() {
   const lifee = useRef(null);
@@ -32,7 +34,11 @@ function App() {
 
   return (
     <div>
-      <div className="main_circle" style={{ background: "#0d0828", padding: "1.5rem" }}>
+      <Navbar />
+      <div
+        className="main_circle"
+        style={{ borderRadius: "50%", padding: "2rem" }}
+      >
         <div className="circle1">
           <div className="circle2">
             <div className="circle3">
@@ -54,7 +60,6 @@ function App() {
           {" "}
           <img className="work" src={work} alt="" />
         </a>
-  
       </div>
       <div className="first_div">
         <h2>
@@ -87,8 +92,9 @@ function App() {
         </p>
       </div>
 
+      <hr />
 
-      <div id="musice" ref={musice}  className="fourth_div">
+      <div id="musice" ref={musice} className="fourth_div">
         <div className="music_imges">
           <img src={music} alt="" className="text_img" />
           <img src={music1} alt="" className="sir_img" />
@@ -103,8 +109,7 @@ function App() {
           </p>
         </div>
       </div>
-
-
+      <hr />
 
       <div id="worke" ref={worke} className="third_div">
         <div className="work_imges">
@@ -118,8 +123,8 @@ function App() {
           sapiente non deserunt laudantium, distinctio voluptatibus? Provident
           aut facere similique aliquam illum ab velit soluta tempora
         </p>
-      </div> 
-   
+      </div>
+      <hr />
       <div id="musice" ref={musice} className="fifth_div">
         <div className="logo1">
           <img src={Logo1} alt="" />
@@ -138,6 +143,7 @@ function App() {
           </p>
         </div>
       </div>
+      <hr />
       <div className="sixth_div">
         <h2>MENTORING</h2>
         <img src={Propelling} alt="" />
@@ -152,6 +158,7 @@ function App() {
           earum dignissimos possimus odit adipisci? Aliquam id corporis
           consequuntur asperiores quod, adipisci veritatis omnis. Labore officia
           dolorum soluta numquam!
+      <hr />
         </p>
         <h2>CXO BRANDING</h2>
         <p>
@@ -163,6 +170,8 @@ function App() {
           asperiores quod, adipisci veritatis omnis. Labore officia dolorum
           soluta numquam!
         </p>
+      <hr />
+
         <h2>PERSONAL BRANDING</h2>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem,
@@ -202,4 +211,3 @@ function App() {
 }
 
 export default App;
-
